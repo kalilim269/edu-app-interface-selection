@@ -336,8 +336,8 @@ td  {
                 <?php
                 if ($baris['fld_criteria_id'] == $kolom['fld_criteria_id']) {
                   echo '1';
-
-                  $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+                  
+                  $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
                   $sql = "SELECT * FROM tbl_eduapp_analyse_criteria WHERE user_id=$user";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
