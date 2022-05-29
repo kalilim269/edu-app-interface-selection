@@ -214,7 +214,7 @@ if (isset($_POST['reset-password'])) {
     $mail->CharSet =  "utf-8";
     $mail->IsSMTP();
     //Debug
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     // enable SMTP authentication
     $mail->SMTPAuth = true;                  
     // GMAIL username
