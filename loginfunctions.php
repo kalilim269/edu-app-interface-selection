@@ -196,7 +196,7 @@ if (isset($_POST['reset-password'])) {
 
     $link = 'http://localhost/fyp/reset_password.php?token='.$token.'&email='.$email;
     // Send email to user with the token in a link they can click on
-    $to = $email;
+    /*$to = $email;
     $subject = "Reset your password for EDU APP INTERFACE SELECTION";
     $msg = "Hi there, click on this <a href=\"http://localhost/fyp/reset_password.php?token=" .$token."&email=".$email."\">link</a> to reset your password on our site";
     $msg = wordwrap($msg,70);
@@ -205,9 +205,43 @@ if (isset($_POST['reset-password'])) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: info@examplesite.com";
     mail($to, $subject, $msg, $headers);
-    header('location: pending.php?email=' . $email);
-
-
+    header('location: pending.php?email=' . $email);*/
+    require_once('phpmailer/PHPMailerAutoload.php');
+ 
+    $mail = new PHPMailer();
+ 
+    $mail->CharSet =  "utf-8";
+    $mail->IsSMTP();
+    //Debug
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // enable SMTP authentication
+    $mail->SMTPAuth = true;                  
+    // GMAIL username
+    $mail->Username = "limkali269@gmail.com";
+    // GMAIL password
+    $mail->Password = "kimheechul710";
+    $mail->SMTPSecure = "tls";  
+    // sets GMAIL as the SMTP server
+    $mail->Host = "smtp.gmail.com";
+    // set the SMTP port for the GMAIL server
+    $mail->Port = "587";
+    $mail->From='limkali269@gmail.com';
+    $mail->FromName='EDU APP INTERFACE SELECTION';
+    $mail->AddAddress($email, 'reciever_name');
+    $mail->Subject  =  'Reset Password';
+    $mail->IsHTML(true);
+    $mail->Body    = 'Click On This Link to Reset Password '.$link.'';
+    if($mail->Send())
+    {
+      echo "Check Your Email and Click on the link sent to your email";
+    }
+    else
+    {
+      echo "Mail Error - >".$mail->ErrorInfo;
+    }
+  }
+  else{
+    echo "Invalid Email Address. Go back";
   }
 }
 
