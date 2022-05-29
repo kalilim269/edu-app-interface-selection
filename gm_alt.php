@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -310,8 +310,9 @@ td  {
                 <?php
                   if ($baris['alt_id'] == $kolom['alt_id']) {
                     echo '1';
-
-                    $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+        
+                    $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+                    //$conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
                   $sql = "SELECT * FROM tbl_eduapp_analyse_alternative WHERE user_id=$user";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
@@ -347,7 +348,8 @@ td  {
             <th>
               <?php
 
-                 $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+                  $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+                 //$conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
                   $sql = "SELECT * FROM tbl_eduapp_analyse_alternative WHERE user_id=$user";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
