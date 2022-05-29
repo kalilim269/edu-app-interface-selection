@@ -481,7 +481,8 @@ td  {
             <th style="background-color:#FFD700">
               <?php
               //<?php $bobots1y = $criteriaObj->readCriteria("C1"); while ($row = $bobots1y->fetch(PDO::FETCH_ASSOC)): 
-              $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+              $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+              //$conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
                   $sql = "SELECT criteria_an FROM tbl_eduapp_criteria_data WHERE fld_criteria_id='C2' AND user_id=$user";
                   $result=mysqli_query($conn,$sql)
                 ?>
