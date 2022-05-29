@@ -1,4 +1,4 @@
-<?php include_once 'loginfunctions.php' ?>
+<?php //include_once 'loginfunctions.php' ?>
 
 <!DOCTYPE html>
 <html>
