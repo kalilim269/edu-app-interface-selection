@@ -196,7 +196,7 @@ if (isset($_POST['reset-password'])) {
 
     $link = 'http://localhost/fyp/reset_password.php?token='.$token.'&email='.$email;
     // Send email to user with the token in a link they can click on
-    /*$to = $email;
+    $to = $email;
     $subject = "Reset your password for EDU APP INTERFACE SELECTION";
     $msg = "Hi there, click on this <a href=\"http://localhost/fyp/reset_password.php?token=" .$token."&email=".$email."\">link</a> to reset your password on our site";
     $msg = wordwrap($msg,70);
@@ -205,8 +205,9 @@ if (isset($_POST['reset-password'])) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: info@examplesite.com";
     mail($to, $subject, $msg, $headers);
-    header('location: pending.php?email=' . $email);*/
-    require_once('PHPMailerAutoload.php');
+    header('location: pending.php?email=' . $email);
+	  
+    /*require_once('PHPMailerAutoload.php');
  
     $mail = new PHPMailer();
  
@@ -241,7 +242,7 @@ if (isset($_POST['reset-password'])) {
     }
   }
   else{
-    echo "Invalid Email Address. Go back";
+    echo "Invalid Email Address. Go back";*/
   }
 }
 
