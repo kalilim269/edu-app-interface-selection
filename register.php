@@ -117,7 +117,7 @@ form, .content {
   	  <button type="submit" class="btn" name="new_user">SIGN UP</button>
   	</div>
   	<p>
-  		Already a member? <a href="login.php">LOGIN</a>
+  		Already a member? <a href="index.php">LOGIN</a>
   	</p>
   </form>
 </body>
