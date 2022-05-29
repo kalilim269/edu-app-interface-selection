@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -292,7 +292,8 @@ td  {
                 if ($baris['fld_subcriteria_id'] == $kolom['fld_subcriteria_id']) {
                   echo '1';
 
-                  $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+                  $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+                  //$conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
                   $sql = "SELECT * FROM tbl_eduapp_analyse_subcriteria WHERE user_id=$user";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
@@ -427,7 +428,8 @@ td  {
              <th style="background-color:#FFD700">
               <?php
               //<?php $bobots1y = $criteriaObj->readCriteria("C1"); while ($row = $bobots1y->fetch(PDO::FETCH_ASSOC)): 
-              $conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+               $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+              //$conn = new mysqli('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
                   $sql = "SELECT criteria_gm FROM tbl_eduapp_criteria_data WHERE fld_criteria_id='C1' AND user_id=$user";
                   $result=mysqli_query($conn,$sql)
                 ?>
