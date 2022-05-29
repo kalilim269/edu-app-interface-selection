@@ -9,7 +9,7 @@ app.user(express.static(__dirname));
 //routes
 
 app.get("/", function(res) {
-	res.render("index");
+	res.render("login");
 })
 
 app.listen(port, function() {
