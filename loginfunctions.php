@@ -207,7 +207,7 @@ if (isset($_POST['reset-password'])) {
     mail($to, $subject, $msg, $headers);
     header('location: pending.php?email=' . $email);*/
 	  
-    include_once('PHPMailerAutoload.php');
+    require_once('phpmailer/PHPMailerAutoload.php');
  
     $mail = new PHPMailer();
  
