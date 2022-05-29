@@ -203,7 +203,7 @@ p {
                 <div class="col-lg-12 col-xs-6 login-form">
                     <div class="col-lg-12 col-xs-6 login-form">
 
-	<form method="post" action="login.php">
+	<form method="post" action="index.php">
 		
 		<div class="form-group">
 			<i style="color: red;"><b><?php echo display_error(); ?></b></i>
