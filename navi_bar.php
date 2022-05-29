@@ -36,7 +36,7 @@
         
 
       </button>
-      <a class="navbar-brand" href="index.php"><b>EDU APP INTERFACE SELECTION</b></a>
+      <a class="navbar-brand" href="home.php"><b>EDU APP INTERFACE SELECTION</b></a>
     </div>
  
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,7 +74,7 @@
      
            </a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?logout='1'" style="color: black;"><span class="glyphicon glyphicon-log-out"></span>&nbsp; <b>Log Out</b></a></li>      
+            <li><a href="home.php?logout='1'" style="color: black;"><span class="glyphicon glyphicon-log-out"></span>&nbsp; <b>Log Out</b></a></li>      
             
           </ul>
         </li>
@@ -87,7 +87,7 @@
       <li><a href="project_list.php"><b>Project</b></a></li>
     </ul>
      <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.php"><b>Home</b></a></li>
+      <li><a href="home.php"><b>Home</b></a></li>
     </ul>
     
       
