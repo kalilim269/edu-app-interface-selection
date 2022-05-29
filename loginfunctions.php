@@ -220,7 +220,7 @@ if (isset($_POST['reset-password'])) {
     // GMAIL username
     $mail->Username = "limkali269@gmail.com";
     // GMAIL password
-    $mail->Password = "kimheechul710";
+    $mail->Password = "kalilim269";
     $mail->SMTPSecure = "tls";  
     // sets GMAIL as the SMTP server
     $mail->Host = "smtp.gmail.com";
