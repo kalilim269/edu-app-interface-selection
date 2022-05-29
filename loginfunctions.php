@@ -235,7 +235,8 @@ if (isset($_POST['reset-password'])) {
     if($mail->Send())
     {
       //echo "Check Your Email and Click on the link sent to your email";
-      header('location: pending.php?email=' . $email);
+      //header('location: pending.php?email=' . $email);
+	    header('location: pending.php');
     }
     else
     {
