@@ -29,7 +29,8 @@ if (isset($_SESSION['user']))  {
 }
 
 // connect to the database
-$conn = mysqli_connect('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
+$conn = mysqli_connect('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+//$conn = mysqli_connect('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
 
 
 $sql = "SELECT * FROM tbl_eduapp_files_data WHERE user_id=$user";
