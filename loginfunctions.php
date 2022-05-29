@@ -234,7 +234,7 @@ if (isset($_POST['reset-password'])) {
     $mail->Body    = 'Click On This Link to Reset Password '.$link.'';
     if($mail->Send())
     {
-      echo "Check Your Email and Click on the link sent to your email";
+      //echo "Check Your Email and Click on the link sent to your email";
       header('location: pending.php?email=' . $email);
     }
     else
