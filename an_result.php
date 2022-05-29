@@ -251,15 +251,15 @@ ol li a{
 
         <tr class="success">
           <?php $bobot1 = $ranObj->readPrioC1($user); while ($row = $bobot1->fetch(PDO::FETCH_ASSOC)): ?>
-            <td colspan="3" class="text-center"><?=number_format($row['criteria_gm'], 4, '.', ',')?></td> 
+            <td colspan="3" class="text-center"><?=number_format($row['criteria_an'], 4, '.', ',')?></td> 
           <?php endwhile; ?>
 
           <?php $bobot1 = $ranObj->readPrioC2($user); while ($row = $bobot1->fetch(PDO::FETCH_ASSOC)): ?>
-            <td colspan="2" class="text-center"><?=number_format($row['criteria_gm'], 4, '.', ',')?></td> 
+            <td colspan="2" class="text-center"><?=number_format($row['criteria_an'], 4, '.', ',')?></td> 
           <?php endwhile; ?>
 
           <?php $bobot1 = $ranObj->readPrioC3($user); while ($row = $bobot1->fetch(PDO::FETCH_ASSOC)): ?>
-            <td colspan="3" class="text-center"><?=number_format($row['criteria_gm'], 4, '.', ',')?></td> 
+            <td colspan="3" class="text-center"><?=number_format($row['criteria_an'], 4, '.', ',')?></td> 
           <?php endwhile; ?>
         </tr>
 
