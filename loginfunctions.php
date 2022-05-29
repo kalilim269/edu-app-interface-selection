@@ -56,7 +56,7 @@ if (isset($_POST['new_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['user'] = $user;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: home.php');
   }
 }
 
@@ -101,7 +101,7 @@ function login(){
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: index.php');		  
+				header('location: home.php');		  
 			//}else{
 				//$_SESSION['user'] = $logged_in_user;
 				//$_SESSION['success']  = "You are now logged in";
@@ -128,7 +128,7 @@ function isLoggedIn()
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: login.php");
+	header("location: index.php");
 }
 
 
@@ -300,7 +300,7 @@ if (isset($_POST['new_password'])) {
     $sql2 = "DELETE FROM tbl_eduapp_resetpassword_a176496 WHERE fld_users_email='$email'";
     $results = mysqli_query($db, $sql2);
 
-    header('location: index.php');
+    header('location: home.php');
   }
 
 }
