@@ -1,1 +1,1 @@
-web: python rfmodel.py
+web: node server.js
