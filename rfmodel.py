@@ -16,7 +16,8 @@ user = content.read()
 
 
 # Open database connection
-db = MySQLdb.connect("localhost","root","","a176496")
+db = MySQLdb.connect("sql6.freemysqlhosting.net","sql6496163","KpxBp7Ln2Y","sql6496163")
+#$db = mysqli_connect('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
