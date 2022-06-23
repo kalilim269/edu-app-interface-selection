@@ -1,1 +1,1 @@
-web: node server.js
+web: python rfmodel.py $PORT
