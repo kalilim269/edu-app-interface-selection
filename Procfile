@@ -1,1 +1,1 @@
-web: python rfmodel.py $PORT
+web: python rfmodel.py
