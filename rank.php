@@ -178,7 +178,7 @@ div.content {
           <br><br><br>
           <hr style="border-top: 5px solid black; margin-top: 20px;">
 
-          <a href="http://localhost:8080/" class="button">Proceed</a>
+          <a href="predict_rank.php" class="button">Proceed</a>
    
   </div>
    
