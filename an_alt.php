@@ -433,10 +433,10 @@ td  {
             <th>
               <?php
 
-                 $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+                 //$conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
                   $sql = "SELECT * FROM tbl_eduapp_analyse_alternative WHERE user_id=$user";
-                  if ($result=mysqli_query($conn,$sql)) {
-                    $rowcount=mysqli_num_rows($result);
+                  //if ($result=mysqli_query($conn,$sql)) {
+                    //$rowcount=mysqli_num_rows($result);
                     //echo "The total number of rows are: ".$rowcount; 
 
                   }
