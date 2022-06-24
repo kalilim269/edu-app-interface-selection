@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -60,7 +60,7 @@ if (isset($_POST['delete_subcriteria'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-   <title>EDU APP INTERFACE SELECTION : Criteria</title>
+   <title>EDU APP INTERFACE SELECTION : Sub-Criteria</title>
    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
  
