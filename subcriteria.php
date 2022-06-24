@@ -201,7 +201,7 @@ ol {
 
 
           <hr style="border-top: 5px solid black;">
-          <a href="subcriteria_data.php" class="button">Evaluate</a>
+          <a href="subcriteria_data.php" class="button">Proceed</a>
    
   </div>
    
