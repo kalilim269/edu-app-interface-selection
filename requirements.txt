@@ -123,7 +123,7 @@ soupsieve==2.3.2.post1
 spacy==3.0.5
 spacy-legacy==3.0.2
 srsly==2.4.1
-tensorboard==2.5.0
+tensorboard==2.8
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
 tensorflow==2.8.0
