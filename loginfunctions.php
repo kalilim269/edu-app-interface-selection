@@ -3,7 +3,9 @@ session_start();
 
 // connect to database
 //$db = mysqli_connect('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
-$db = mysqli_connect('localhost', 'root', '', 'a176496');
+//$db = mysqli_connect('localhost', 'root', '', 'a176496');
+$conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+
 
 // variable declaration 
 $username = "";
