@@ -80,9 +80,9 @@
         </li>
       </ul>
     
-    <ul class="nav navbar-nav navbar-right">
+    <!--<ul class="nav navbar-nav navbar-right">
       <li><a href="#"><b>About</b></a></li>
-    </ul>
+    </ul>-->
     <ul class="nav navbar-nav navbar-right">
       <li><a href="project_list.php"><b>Project</b></a></li>
     </ul>
