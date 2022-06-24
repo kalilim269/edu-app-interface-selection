@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -132,7 +132,7 @@ body {
   width: 200px;
   background-color: #FFE4E1;
   position: absolute;
-  height: 69%;
+  height: 70%;
   overflow: auto;
 }
 
@@ -324,7 +324,7 @@ td  {
                 if ($baris['fld_subcriteria_id'] == $kolom['fld_subcriteria_id']) {
                   echo '1';
 
-                  $conn = new mysqli('localhost', 'root', '', 'a176496');
+                  $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
                   $sql = "SELECT * FROM tbl_eduapp_subcriteria_data WHERE user_id=$user AND fld_criteria_id='$cri_id'";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
@@ -513,7 +513,8 @@ td  {
             <th style="background-color:#FFD700">
               <?php
               //<?php $bobots1y = $criteriaObj->readCriteria("C1"); while ($row = $bobots1y->fetch(PDO::FETCH_ASSOC)): 
-              $conn = new mysqli('localhost', 'root', '', 'a176496');
+              $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+
                   $sql = "SELECT criteria_an FROM tbl_eduapp_criteria_data WHERE fld_criteria_id='$cri_id' AND user_id=$user";
                   $result=mysqli_query($conn,$sql)
                 ?>
