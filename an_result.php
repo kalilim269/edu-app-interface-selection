@@ -239,9 +239,7 @@ ol li a{
 
     <ol class="breadcrumb" style="background-color: #F0FFFF; margin-top: 10px;">
       <li><a href="an_criteria.php">Criteria</a></li>
-      <li><a href="an_sub1.php">Sub-Criteria (Universal Design)</a></li>
-      <li><a href="an_sub2.php">Sub-Criteria (Innovation)</a></li>
-      <li><a href="an_sub3.php">Sub-Criteria (Intelligence)</a></li>
+      <li><a href="an_sub1.php">Sub-Criteria</a></li>
       <li><a href="an_eva_alt.php">Select Alternative</a></li>
       <li><a href="an_alt.php">Alternative</a></li>
       <li class="active">Summary Report</a></li>
