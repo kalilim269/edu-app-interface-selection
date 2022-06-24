@@ -132,7 +132,7 @@ div.content {
  outline: none;
  vertical-align: top;
  float: right;
- margin-top: -10px;
+ margin-top: 0px;
 }
 
 .button:hover {
