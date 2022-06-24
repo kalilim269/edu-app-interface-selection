@@ -49,7 +49,7 @@ body {
 
 .form-style-8{
   max-width: 800px;
-  height: 500px;
+  height: 550px;
   background: #FFFAFA;
   padding: 50px;
   padding-top: 10px;
