@@ -470,7 +470,7 @@ td  {
         </tr>
         <tr>
           <th>Consistency Ratio (CR)</th>
-          <td><?php $cr = $ci/$ir; echo number_format($cr, 4, '.', ',');?></td>
+          <td><?php if ($ir != 0){$cr = $ci/$ir; echo number_format($cr, 4, '.', ',');} else {echo '0';}?></td>
         </tr>
       </tbody>
     </table>
