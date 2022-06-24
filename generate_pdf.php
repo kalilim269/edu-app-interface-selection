@@ -95,5 +95,6 @@ $pdf->MultiCell(180, 5, ' ');
 $pdf->MultiCell(180, 5,'Reminder: For Additive Normalization Method, the lower value are better than higher value. Please take this into consideration when doing your research.');
 
 /// end of records /// 
-$pdf->Output();
+$pdfTitle = 'AHP Summary Report';
+$pdf->Output($pdfTitle, 'I');
 ?>
