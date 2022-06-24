@@ -1,9 +1,9 @@
 <?php
 class Config {
-  private $host = "localhost";
-  private $db_name = "a176496";
-  private $username = "root";
-  private $password = "";
+  private $host = "sql6.freemysqlhosting.net";
+  private $db_name = "sql6496163";
+  private $username = "sql6496163";
+  private $password = "KpxBp7Ln2Y";
   public $conn;
 
   public function getConnection() {
