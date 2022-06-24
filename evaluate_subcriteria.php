@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -164,7 +164,7 @@ body {
   width: 200px;
   background-color: #FFE4E1;
   position: absolute;
-  height: 69%;
+  height: 70%;
   overflow: auto;
 }
 
