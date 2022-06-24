@@ -140,7 +140,6 @@ tqdm==4.60.0
 traitlets==5.0.5
 trio==0.19.0
 trio-websocket==0.9.2
-typing-extensions==3.7.4.3
 urllib3==1.26.4
 waitress==2.1.1
 wasabi==0.8.2
