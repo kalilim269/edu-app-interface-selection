@@ -55,7 +55,7 @@ if (isset($_POST['new_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['user'] = $user;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: home.php');
   }
 }
 
@@ -127,7 +127,7 @@ function isLoggedIn()
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: login.php");
+	header("location: index.php");
 }
 
 
@@ -193,12 +193,12 @@ if (isset($_POST['reset-password'])) {
     $sql = "INSERT INTO tbl_eduapp_resetpassword_a176496(fld_users_email, fld_reset_code, fld_exp_date) VALUES ('$email', '$token', '$expDate')";
     $results = mysqli_query($db, $sql);
 
-    $link = 'http://localhost/fyp/reset_password.php?token='.$token.'&email='.$email;
+    $link = 'https://edu-app-interface-selection.herokuapp.com/reset_password.php?token='.$token.'&email='.$email;
 
     // Send email to user with the token in a link they can click on
     //$to = $email;
     //$subject = "Reset your password for EDU APP INTERFACE SELECTION";
-    //$msg = "Hi there, click on this <a href=\"http://localhost/fyp/reset_password.php?token=" .$token."&email=".$email."\">link</a> to reset your password on our site";
+    //$msg = "Hi there, click on this <a href=\"https://edu-app-interface-selection.herokuapp.com/reset_password.php?token=" .$token."&email=".$email."\">link</a> to reset your password on our site";
     //$msg = wordwrap($msg,70);
     //set content-type header for sending HTML email
     //$headers = "MIME-Version: 1.0" . "\r\n";
@@ -300,7 +300,7 @@ if (isset($_POST['new_password'])) {
     $sql2 = "DELETE FROM tbl_eduapp_resetpassword_a176496 WHERE fld_users_email='$email'";
     $results = mysqli_query($db, $sql2);
 
-    header('location: index.php');
+    header('location: home.php');
   }
 
 }
