@@ -228,11 +228,12 @@ p {
 		
 
         <div class="col-lg-12 col-xs-6 login-btm login-button">
-            <form method="POST" action="register.php">
-            <button type="submit" class="btn btn-outline-primary" name="signup_btn" value="ignore" formnovalidate>
+            <button style="float:right; margin-right: 40px;" type="submit" class="btn btn-outline-primary" name="login_btn">LOGIN</button>
+
+        <form method="POST" action="register.php">
+            <button type="submit" class="btn btn-outline-primary" name="signup_btn" value="ignore" style="float:left; margin-left:40px" formnovalidate>
             SIGN UP</button>&nbsp; &nbsp; &nbsp;
-			</form>
-            <button type="submit" class="btn btn-outline-primary" name="login_btn">LOGIN</button>
+	</form>
 		</div>
         
 
