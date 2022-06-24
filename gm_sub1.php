@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-   <title>EDU APP INTERFACE SELECTION : Criteria</title>
+   <title>EDU APP INTERFACE SELECTION : Sub-Criteria</title>
    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
  
@@ -328,7 +328,8 @@ td  {
                 if ($baris['fld_subcriteria_id'] == $kolom['fld_subcriteria_id']) {
                   echo '1';
 
-                   $conn = new mysqli('localhost', 'root', '', 'a176496');
+                   $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+
                   $sql = "SELECT * FROM tbl_eduapp_subcriteria_data WHERE user_id=$user AND fld_criteria_id='$cri_id'";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
@@ -465,7 +466,8 @@ td  {
              <th style="background-color:#FFD700">
               <?php
               //<?php $bobots1y = $criteriaObj->readCriteria("C1"); while ($row = $bobots1y->fetch(PDO::FETCH_ASSOC)): 
-               $conn = new mysqli('localhost', 'root', '', 'a176496');
+               $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+
                   $sql = "SELECT criteria_gm FROM tbl_eduapp_criteria_data WHERE fld_criteria_id='$cri_id' AND user_id=$user";
                   $result=mysqli_query($conn,$sql)
                 ?>
