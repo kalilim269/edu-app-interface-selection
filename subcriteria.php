@@ -38,7 +38,7 @@ body {
 
 .form-style-9{
   max-width: 900px;
-  height: 600px;
+  height: 650px;
   background: #FFE4E1;
   padding: 50px;
   padding-top: 10px;
@@ -49,7 +49,7 @@ body {
 
 .form-style-8{
   max-width: 800px;
-  height: 450px;
+  height: 500px;
   background: #FFFAFA;
   padding: 50px;
   padding-top: 10px;
