@@ -264,9 +264,9 @@ td  {
       
       <li class="active">Criteria</li>
       <li><a href="gm_sub1.php">Sub-Criteria</a></li>
-      <li><a href="gm_eva_alt.php">Select Alternative</a></li>
+      <!--<li><a href="gm_eva_alt.php">Select Alternative</a></li>
       <li><a href="gm_alt.php">Alternative</a></li>
-      <li><a href="gm_result.php">Summary Report</a></li>
+      <li><a href="gm_result.php">Summary Report</a></li>-->
 
     </ol>
 
