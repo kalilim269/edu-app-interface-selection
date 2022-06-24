@@ -217,6 +217,11 @@ ol li a{
   <span class="closebtn">&times;</span>  
   <strong>Info! Please take note!</strong><br> Please go through all the Alternative Evaluation Table before proceeding to the Summary Report to obtain the complete report.
 </div>
+  
+  <div class="alert warning">
+  <span class="closebtn">&times;</span>  
+  <strong>Info! Please take note!</strong><br> For Additive Normalization Method, the lower value are better than the higher value. As a result, the alternative's ranking that is shown in the table will be in ascending order, which might differ from other method.  
+</div>
 
   <div class="sidebar">
   <a href="criteria.php"><b>Criteria</b></a>
