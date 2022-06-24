@@ -258,9 +258,9 @@ td  {
      <ol class="breadcrumb" style="background-color: #F0FFFF;">
       <li class="active">Criteria</li>
       <li><a href="an_sub1.php">Sub-Criteria</a></li>
-      <li><a href="an_eva_alt.php">Select Alternative</a></li>
+      <!--<li><a href="an_eva_alt.php">Select Alternative</a></li>
       <li><a href="an_alt.php">Alternative</a></li>
-      <li><a href="an_result.php">Summary Report</a></li>
+      <li><a href="an_result.php">Summary Report</a></li>-->
     </ol>
 
    
