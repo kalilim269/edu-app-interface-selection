@@ -220,7 +220,7 @@ ol li a{
   
   <div class="alert warning">
   <span class="closebtn">&times;</span>  
-  <strong>Info! Please take note!</strong><br> For Additive Normalization Method, the lower value are better than the higher value. As a result, the alternative's ranking that is shown in the table will be in ascending order, which might differ from other method.  
+  <strong>Please take this into consideration!</strong><br> For Additive Normalization Method, the lower value are better than the higher value. As a result, the alternative's ranking that is shown in the table will be in ascending order, which might differ from other method.  
 </div>
 
   <div class="sidebar">
