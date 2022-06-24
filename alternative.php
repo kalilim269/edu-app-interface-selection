@@ -170,6 +170,8 @@ ol {
   <div class="form-style-9">
           <h2 style="text-align: center;font-size: 25px;"><b>Alternative</b></h2>
           <div class="form-style-8">
+            
+            <h2 style="font-size: 18px; margin-left: 10px;margin-bottom: 5px;"><b>Recommended Data: </b></h2>
 
 
           <ol>
