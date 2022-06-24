@@ -2,7 +2,7 @@
 include_once 'loginfunctions.php';
 if (!isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if (isset($_SESSION['user']))  { 
@@ -133,7 +133,7 @@ body {
   width: 200px;
   background-color: #FFE4E1;
   position: absolute;
-  height: 69%;
+  height: 70%;
   overflow: auto;
 }
 
@@ -371,7 +371,8 @@ td  {
                 if ($baris['fld_criteria_id'] == $kolom['fld_criteria_id']) {
                   echo '1';
 
-                  $conn = new mysqli('localhost', 'root', '', 'a176496');
+                  $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
+
                   $sql = "SELECT * FROM tbl_eduapp_analyse_criteria WHERE user_id=$user";
                   if ($result=mysqli_query($conn,$sql)) {
                     $rowcount=mysqli_num_rows($result);
