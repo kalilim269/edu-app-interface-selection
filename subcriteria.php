@@ -49,7 +49,7 @@ body {
 
 .form-style-8{
   max-width: 800px;
-  height: 550px;
+  height: 500px;
   background: #FFFAFA;
   padding: 50px;
   padding-top: 10px;
@@ -95,7 +95,7 @@ body {
 div.content {
   margin-left: 225px;
   padding: 0px 16px;
-  height: 500px;
+  height: 650px;
 }
 
 @media screen and (max-width: 700px) {
