@@ -235,7 +235,7 @@ ol {
 
 
           <hr style="border-top: 5px solid black;">
-          <a href="alternative_data.php" class="button">Evaluate</a>
+          <a href="alternative_data.php" class="button">Proceed</a>
    
   </div>
    
