@@ -100,7 +100,7 @@ function login(){
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: index.php');		  
+				header('location: home.php');		  
 			//}else{
 				//$_SESSION['user'] = $logged_in_user;
 				//$_SESSION['success']  = "You are now logged in";
