@@ -147,7 +147,7 @@ body {
   width: 200px;
   background-color: #FFE4E1;
   position: absolute;
-  height: 69%;
+  height: 70%;
   overflow: auto;
 }
 
