@@ -7,7 +7,7 @@ $ftp_server = 'lrgs.ftsm.ukm.my'; // change this
     //$src_file = $_FILES['srcfile']['name'];
 
 // set up basic connection
-$ftp = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+$ftp = ftp_ssl_connect($ftp_server);
 
 // login with username and password
 $login_result = ftp_login($ftp, $ftp_user_name, $ftp_user_pass);
