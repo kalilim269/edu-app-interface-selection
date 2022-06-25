@@ -62,6 +62,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
    
    }
    echo $destination;
+   echo getcwd();
 
     // get the file extension
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
