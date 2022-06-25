@@ -35,6 +35,7 @@ $remote_dir = '/file_uploads';
 
 $ftpcon = ftp_connect($ftp_hostname);
 $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+ftp_pasv($ftpcon, true);
 
 // connect to the database
 $conn = mysqli_connect('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
