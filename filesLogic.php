@@ -129,6 +129,7 @@ if (isset($_GET['file_id'])) {
         //$localFilePath  = $file['file_name'];
         $ftpcon = ftp_connect($ftp_hostname);
         $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+        ftp_pasv($ftpcon, true);
 
         $remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
@@ -164,6 +165,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
    $ftpcon = ftp_connect($ftp_hostname);
    $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+   ftp_pasv($ftpcon, true);
 
 
   try {
