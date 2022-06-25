@@ -42,6 +42,7 @@ $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 if (isset($_POST['save'])) { // if save button on the form is clicked
     // name of the uploaded file
     $filename = $_FILES['myfile']['name'];
+    chmod($filename, 0777);
 
     // destination of the file on the server
     $destination = dirname(__FILE__) . "/file_uploads/" . $filename;
