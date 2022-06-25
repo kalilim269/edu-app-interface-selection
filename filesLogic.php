@@ -148,7 +148,7 @@ if (isset($_GET['file_id'])) {
          
        // close the connection
        ftp_close($ftpcon);
-        header("Content-Type: application/octet-stream");
+        header("Content-Type: application/pdf");
         header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
