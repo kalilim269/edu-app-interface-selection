@@ -163,7 +163,7 @@ if (isset($_GET['delete'])) {
     $file = mysqli_fetch_assoc($stmt);
 
     //get image path
-    $filepath = 'file_uploads/'.$file['file_name']
+    $filepath = 'file_uploads/'.$file['file_name'];
 
     //check if image exists
     if(file_exists($filepath)){
