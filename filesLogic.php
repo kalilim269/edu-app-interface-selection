@@ -167,10 +167,11 @@ if (isset($_GET['delete'])) {
 
     //check if image exists
     if(file_exists($filepath)){
-       if (ftp_delete($ftpcon, "$remote_dir/$file_name['file_name']")) 
+       if (ftp_delete($ftpcon, "$remote_dir/$file_name['file_name']")) {
           //delete the image
           unlink($filepath);
-          ftp_close($ftpcon);
+       }
+       ftp_close($ftpcon);
        
     $delstmt = "DELETE FROM tbl_eduapp_files_data WHERE id=$id";
     mysqli_query($conn, $delstmt);
