@@ -46,6 +46,13 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
 
     // destination of the file on the server
     $destination = dirname(__FILE__) . '/file_uploads/' . $filename;
+   if ( ! is_writable(dirname($destination))) {
+
+    echo' not writable!!!';
+} else {
+echo' writable!!!';
+   
+}
     chmod($destination, 0755);
    echo $destination;
 
