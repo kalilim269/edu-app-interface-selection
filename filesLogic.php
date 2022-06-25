@@ -53,7 +53,14 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
          echo' writable!!!';
    
    }
-    chmod(dirname(__FILE__) . '/file_uploads/' , 0755);
+    chmod(dirname('/file_uploads') , 0777);
+   if ( ! is_writable(dirname('/file_uploads'))) {
+
+       echo' not writable!!!';
+   } else {
+         echo' writable!!!';
+   
+   }
    echo $destination;
 
     // get the file extension
