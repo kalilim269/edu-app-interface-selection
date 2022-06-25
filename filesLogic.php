@@ -48,12 +48,12 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $destination = dirname(__FILE__) . '/file_uploads/' . $filename;
    if ( ! is_writable(dirname($destination))) {
 
-    echo' not writable!!!';
-} else {
-echo' writable!!!';
+       echo' not writable!!!';
+   } else {
+         echo' writable!!!';
    
-}
-    chmod($destination, 0755);
+   }
+    chmod(dirname(__FILE__) . '/file_uploads/' , 0755);
    echo $destination;
 
     // get the file extension
