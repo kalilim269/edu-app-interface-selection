@@ -133,12 +133,15 @@ if (isset($_GET['file_id'])) {
 
         $remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
-        ob_start();
+        
         // try to download a file from server
         if(ftp_get($ftpcon, "php://output", $remoteFilePath, FTP_BINARY)){
-           ob_end_clean();
+           
            header("Content-Type: application/octet-stream");
            header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
+           header('Expires: 0');
+           header('Cache-Control: must-revalidate');
+           header('Pragma: public');
            header("Content-Length: $size"); 
         } else {
            echo '<script type="text/javascript">';
