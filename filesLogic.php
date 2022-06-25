@@ -45,7 +45,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
   
 
     // destination of the file on the server
-    $destination = "../file_uploads/" . $filename;
+    $destination = dirname(__FILE__) . '/file_uploads/' . $filename;
     chmod($destination, 0755);
 
     // get the file extension
@@ -69,6 +69,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     } else {
         // move the uploaded (temporary) file to the specified destination
         if (move_uploaded_file($file, $destination)) {
+           chmod($destination, 0755);
           
             $sql = "INSERT INTO tbl_eduapp_files_data(file_name, file_size, downloads_count, user_id) VALUES ('$filename', $size, 0, $user)";
             if (mysqli_query($conn, $sql)) {
