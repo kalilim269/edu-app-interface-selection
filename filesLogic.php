@@ -90,7 +90,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                
             }
             
-            ftp_close($ftpcon);
+            
           
         } else {
            
@@ -99,6 +99,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             echo 'swal("Error !","Failed to upload file!","error")';
             echo '}, 200);  </script>';
         }
+       ftp_close($ftpcon);
        
     }
 }
