@@ -45,7 +45,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
   
 
     // destination of the file on the server
-    $destination = 'file_uploads/' . basename($filename);
+    $destination = getcwd() . 'file_uploads/' . basename($filename);
    if ( ! is_writable('file_uploads/')) {
 
        echo' not writable!!!';
