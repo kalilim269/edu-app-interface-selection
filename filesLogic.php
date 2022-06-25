@@ -136,13 +136,9 @@ if (isset($_GET['file_id'])) {
         
         // try to download a file from server
         if(ftp_get($ftpcon, "php://output", $remoteFilePath, FTP_BINARY)){
+           //...
            
-           header("Content-Type: application/octet-stream");
-           header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
-           header('Expires: 0');
-           header('Cache-Control: must-revalidate');
-           header('Pragma: public');
-           header("Content-Length: $size"); 
+           
         } else {
            echo '<script type="text/javascript">';
            echo 'setTimeout(function () {';
@@ -152,6 +148,12 @@ if (isset($_GET['file_id'])) {
          
        // close the connection
        ftp_close($ftpcon);
+        header("Content-Type: application/octet-stream");
+        header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header("Content-Length: $size"); 
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
