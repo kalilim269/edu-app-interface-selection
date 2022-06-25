@@ -45,7 +45,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
   
 
     // destination of the file on the server
-    $destination = dirname(__FILE__) . "/file_uploads/" . $filename;
+    $destination = "../file_uploads/" . $filename;
     chmod($destination, 0755);
 
     // get the file extension
