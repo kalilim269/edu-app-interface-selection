@@ -164,10 +164,11 @@ if (isset($_GET['delete'])) {
 
     //get image path
     $filepath = 'file_uploads/'.$file['file_name'];
+    $file_nm = $file['file_name'];
 
     //check if image exists
     if(file_exists($filepath)){
-       if (ftp_delete($ftpcon, "$remote_dir/$file_name['file_name']")) {
+       if (ftp_delete($ftpcon, "$remote_dir/$file_nm")) {
           //delete the image
           unlink($filepath);
        }
