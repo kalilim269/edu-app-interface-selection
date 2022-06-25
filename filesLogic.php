@@ -46,15 +46,15 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
 
     // destination of the file on the server
     $destination = dirname(__FILE__) . '/file_uploads/' . $filename;
-   if ( ! is_writable(dirname('/file_uploads'))) {
+   if ( ! is_writable('file_uploads/')) {
 
        echo' not writable!!!';
    } else {
          echo' writable!!!';
    
    }
-    chmod('/file_uploads' , 0777);
-   if ( ! is_writable('/file_uploads')) {
+    chmod('file_uploads/' , 0777);
+   if ( ! is_writable('file_uploads/')) {
 
        echo' not writable!!!';
    } else {
