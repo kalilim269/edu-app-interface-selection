@@ -33,9 +33,7 @@ $ftp_username = 'limkali';
 $ftp_password = '@ra5M6zXnS8iiy_';
 $remote_dir = '/file_uploads';
 
-$ftpcon = ftp_connect($ftp_hostname);
-$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
-ftp_pasv($ftpcon, true);
+
 
 // connect to the database
 $conn = mysqli_connect('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
@@ -51,6 +49,10 @@ $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 if (isset($_POST['save'])) { // if save button on the form is clicked
     
     $filename = $_FILES['myfile']['name'];
+   
+   $ftpcon = ftp_connect($ftp_hostname);
+   $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+   ftp_pasv($ftpcon, true);
    
     // destination of the file on the server
     $destination = dirname('file_uploads/') . basename($filename);
@@ -124,6 +126,9 @@ if (isset($_GET['file_id'])) {
         //readfile('file_uploads/' . $file['file_name']);
        
         //$localFilePath  = $file['file_name'];
+        $ftpcon = ftp_connect($ftp_hostname);
+        $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+
         $remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
 
@@ -154,7 +159,11 @@ if (isset($_GET['file_id'])) {
 
 //Delete
 if (isset($_GET['delete'])) {
+   
     $id = $_GET['delete'];
+   $ftpcon = ftp_connect($ftp_hostname);
+   $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+
 
   try {
 
