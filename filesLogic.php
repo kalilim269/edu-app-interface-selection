@@ -28,6 +28,14 @@ if (isset($_SESSION['user']))  {
     $user = $_SESSION['user']['fld_user_num'];
 }
 
+$ftp_hostname = 'ftp.drivehq.com';
+$ftp_username = 'limkali';
+$ftp_password = '@ra5M6zXnS8iiy_';
+$remote_dir = '/file_uploads';
+
+$ftpcon = ftp_connect($ftp_hostname);
+$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+
 // connect to the database
 $conn = mysqli_connect('sql6.freemysqlhosting.net', 'sql6496163', 'KpxBp7Ln2Y', 'sql6496163');
 //$conn = mysqli_connect('lrgs.ftsm.ukm.my', 'a176496', 'bigwhiterabbit', 'a176496');
@@ -40,29 +48,11 @@ $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // Uploads files
 if (isset($_POST['save'])) { // if save button on the form is clicked
-    // name of the uploaded file
+    
     $filename = $_FILES['myfile']['name'];
-  
-
+   
     // destination of the file on the server
     $destination = dirname('file_uploads/') . basename($filename);
-   if ( ! file_exists('file_uploads/')) {
-
-       echo' not exists!!!';
-   } else {
-         echo' exists!!!';
-   
-   }
-    chmod('file_uploads/' , 0777);
-   if ( ! is_writable('file_uploads/')) {
-
-       echo' not writable!!!';
-   } else {
-         echo' writable!!!';
-   
-   }
-   echo $destination;
- 
 
     // get the file extension
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
@@ -84,7 +74,8 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             echo '}, 200);  </script>';
     } else {
         // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
+        //if (move_uploaded_file($file, $destination)) {
+       if (ftp_put($ftpcon, "$remote_dir/$filename", $file, FTP_BINARY)) {
           
             $sql = "INSERT INTO tbl_eduapp_files_data(file_name, file_size, downloads_count, user_id) VALUES ('$filename', $size, 0, $user)";
             if (mysqli_query($conn, $sql)) {
@@ -93,7 +84,11 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             echo 'setTimeout(function () {';
             echo 'swal("Success !","File uploaded successfully","success")';
             echo '}, 200);  </script>';
+               
             }
+            
+            ftp_close($ftpcon);
+          
         } else {
            
             echo '<script type="text/javascript">';
@@ -101,12 +96,14 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             echo 'swal("Error !","Failed to upload file!","error")';
             echo '}, 200);  </script>';
         }
+       
     }
 }
 
 // Downloads files
 if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
+   
 
     // fetch file to download from database
     $sql = "SELECT * FROM tbl_eduapp_files_data WHERE id=$id AND user_id=$user";
@@ -116,14 +113,33 @@ if (isset($_GET['file_id'])) {
     $filepath = 'file_uploads/' . $file['file_name'];
 
     if (file_exists($filepath)) {
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . basename($filepath));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize('file_uploads/' . $file['file_name']));
-        readfile('file_uploads/' . $file['file_name']);
+        //header('Content-Description: File Transfer');
+        //header('Content-Type: application/octet-stream');
+        //header('Content-Disposition: attachment; filename=' . basename($filepath));
+        //header('Expires: 0');
+        //header('Cache-Control: must-revalidate');
+        //header('Pragma: public');
+        //header('Content-Length: ' . filesize('file_uploads/' . $file['file_name']));
+        //readfile('file_uploads/' . $file['file_name']);
+       
+        //$localFilePath  = $file['file_name'];
+        $remoteFilePath = '/file_uploads/' . $file['file_name'];
+        $size = ftp_size($ftpcon, $remoteFilePath);
+
+        // try to download a file from server
+        if(ftp_get($ftpcon, "php://output", $remoteFilePath, FTP_BINARY)){
+           header("Content-Type: application/octet-stream");
+           header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
+           header("Content-Length: $size"); 
+        } else {
+           echo '<script type="text/javascript">';
+           echo 'setTimeout(function () {';
+           echo 'swal("Error !","Failed to download file!","error")';
+           echo '}, 200);  </script>';
+        }
+
+       // close the connection
+       ftp_close($ftpcon);
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
@@ -147,14 +163,15 @@ if (isset($_GET['delete'])) {
     $file = mysqli_fetch_assoc($stmt);
 
     //get image path
-    $filepath = 'file_uploads/'.$file['file_name'];
+    $filepath = 'file_uploads/'.$file['file_name']
 
     //check if image exists
     if(file_exists($filepath)){
-
-    //delete the image
-    unlink($filepath);
-   
+       if (ftp_delete($ftpcon, "$remote_dir/$file_name['file_name']")) 
+          //delete the image
+          unlink($filepath);
+          ftp_close($ftpcon);
+       
     $delstmt = "DELETE FROM tbl_eduapp_files_data WHERE id=$id";
     mysqli_query($conn, $delstmt);
     header("location: project_list.php");
