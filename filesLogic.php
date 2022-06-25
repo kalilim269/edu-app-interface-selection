@@ -154,6 +154,8 @@ if (isset($_GET['file_id'])) {
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
         header("Content-Length: $size"); 
+        ob_clean(); 
+        flush();
         readfile($file['file_name']);
 
         // Now update downloads count
