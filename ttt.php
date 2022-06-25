@@ -1,9 +1,9 @@
 <?php
-$dir = 'www';
-$ftp_server = 'lrgs.ftsm.ukm.my'; // change this
-    $ftp_user_name = 'a176496'; // change this
-    $ftp_user_pass = 'bigwhiterabbit'; // change this
-    $remote_dir = 'ftp://lrgs.ftsm.ukm.my/file_uploads/'; // change this
+$dir = 'testing';
+$ftp_server = 'ftp.drivehq.com'; // change this
+    $ftp_user_name = 'limkali'; // change this
+    $ftp_user_pass = '@ra5M6zXnS8iiy_'; // change this
+    $remote_dir = 'ftp://limkali@ftp.drivehq.com/file_uploads/'; // change this
     //$src_file = $_FILES['srcfile']['name'];
 
 // set up basic connection
