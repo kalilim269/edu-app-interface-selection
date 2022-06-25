@@ -116,7 +116,7 @@ if (isset($_GET['file_id'])) {
     $file = mysqli_fetch_assoc($result);
     $filepath = 'file_uploads/' . $file['file_name'];
 
-    if (file_exists($filepath)) {
+    //if (file_exists($filepath)) {
         //header('Content-Description: File Transfer');
         //header('Content-Type: application/octet-stream');
         //header('Content-Disposition: attachment; filename=' . basename($filepath));
@@ -154,7 +154,7 @@ if (isset($_GET['file_id'])) {
         $updateQuery = "UPDATE tbl_eduapp_files_data SET downloads_count=$newCount WHERE id=$id";
         mysqli_query($conn, $updateQuery);
         exit;
-    }
+    //}
 
 }
 
@@ -180,7 +180,7 @@ if (isset($_GET['delete'])) {
     $file_nm = $file['file_name'];
 
     //check if image exists
-    if(file_exists($filepath)){
+    //if(file_exists($filepath)){
        if (ftp_delete($ftpcon, "$remote_dir/$file_nm")) {
           //delete the image
           unlink($filepath);
@@ -192,7 +192,7 @@ if (isset($_GET['delete'])) {
     header("location: project_list.php");
     
     
-}
+//}
  }
   catch(PDOException $e)
   {
