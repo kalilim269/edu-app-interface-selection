@@ -136,6 +136,7 @@ if (isset($_GET['file_id'])) {
         ob_start();
         // try to download a file from server
         if(ftp_get($ftpcon, "php://output", $remoteFilePath, FTP_BINARY)){
+           ob_end_clean();
            header("Content-Type: application/octet-stream");
            header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
            header("Content-Length: $size"); 
@@ -145,7 +146,7 @@ if (isset($_GET['file_id'])) {
            echo 'swal("Error !","Failed to download file!","error")';
            echo '}, 200);  </script>';
         }
-         ob_end_clean();
+         
        // close the connection
        ftp_close($ftpcon);
 
