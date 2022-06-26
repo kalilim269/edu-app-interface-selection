@@ -132,6 +132,7 @@ if (isset($_GET['file_id'])) {
         $ftpcon = ftp_connect($ftp_hostname);
         //$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
         if ($ftpLogin = ftp_login($ftpcon, $ftp_username, $ftp_password)) {
+           ftp_pasv($ftpcon, true);
            if(ftp_chdir($ftpcon, $dir))
     {
         $th = fopen('php://temp', 'r+');
