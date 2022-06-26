@@ -78,7 +78,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     } else {
         // move the uploaded (temporary) file to the specified destination
         //if (move_uploaded_file($file, $destination)) {
-       if (ftp_put($ftpcon, "$remote_dir/$filename", $file, FTP_BINARY)) {
+       if (ftp_put($ftpcon, "$remote_dir/$filename", $file, FTP_ASCII)) {
           
             $sql = "INSERT INTO tbl_eduapp_files_data(file_name, file_size, downloads_count, user_id) VALUES ('$filename', $size, 0, $user)";
             if (mysqli_query($conn, $sql)) {
