@@ -130,8 +130,8 @@ if (isset($_GET['file_id'])) {
         //$localFilePath  = $file['file_name'];
         $ftpcon = ftp_connect($ftp_hostname);
         //$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
-        if ($ftpLogin = ftp_login($connId, $ftpUsername, $ftpPassword)) {
-           if(ftp_chdir($connId, $dir))
+        if ($ftpLogin = ftp_login($ftpcon, $ftp_username, $ftp_password)) {
+           if(ftp_chdir($ftpcon, $dir))
     {
         $th = fopen('php://temp', 'r+');
         if(ftp_fget($connId, $th, $f, FTP_ASCII, 0))
