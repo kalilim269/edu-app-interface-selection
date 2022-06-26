@@ -134,7 +134,7 @@ if (isset($_GET['file_id'])) {
            if(ftp_chdir($ftpcon, $dir))
     {
         $th = fopen('php://temp', 'r+');
-        if(ftp_fget($connId, $th, $f, FTP_ASCII, 0))
+        if(ftp_fget($ftpcon, $th, $f, FTP_ASCII, 0))
         {
             rewind($th);
             $data = stream_get_contents($th);
@@ -148,16 +148,16 @@ echo $data;
         $tempFile = tempnam("/tmp", "FOO");
         
         // try to download a file from server
-        if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_ASCII)){
+        //if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_ASCII)){
            //...
            
            
-        } else {
-           echo '<script type="text/javascript">';
-           echo 'setTimeout(function () {';
-           echo 'swal("Error !","Failed to download file!","error")';
-           echo '}, 200);  </script>';
-        }
+        //} else {
+           //echo '<script type="text/javascript">';
+          // echo 'setTimeout(function () {';
+           //echo 'swal("Error !","Failed to download file!","error")';
+           //echo '}, 200);  </script>';
+       // }
          
        // close the connection
        ftp_close($ftpcon);
@@ -170,7 +170,7 @@ echo $data;
         //header("Content-Length: $size"); 
         //ob_clean(); 
         //flush();
-        readfile($tempFile);
+        //readfile($tempFile);
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
