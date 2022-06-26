@@ -115,6 +115,7 @@ if (isset($_GET['file_id'])) {
 
     $file = mysqli_fetch_assoc($result);
     $filepath = 'file_uploads/' . $file['file_name'];
+   $remoteFilePath = '/file_uploads/' . $file['file_name'];
 
     //if (file_exists($filepath)) {
         //header('Content-Description: File Transfer');
@@ -143,7 +144,7 @@ if (isset($_GET['file_id'])) {
 }
 header("Content-Disposition: attachment; filename=" . basename($f));
 echo $data;
-        $remoteFilePath = '/file_uploads/' . $file['file_name'];
+        //$remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
         $tempFile = tempnam("/tmp", "FOO");
         
