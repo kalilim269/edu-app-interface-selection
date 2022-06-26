@@ -133,9 +133,10 @@ if (isset($_GET['file_id'])) {
 
         $remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
+        $tempFile = tempnam("/tmp", "FOO");
         
         // try to download a file from server
-        if(ftp_get($ftpcon, "php://output", $remoteFilePath, FTP_BINARY)){
+        if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_BINARY)){
            //...
            
            
@@ -157,7 +158,7 @@ if (isset($_GET['file_id'])) {
         header("Content-Length: $size"); 
         //ob_clean(); 
         //flush();
-        readfile($file['file_name']);
+        readfile($tempFile);
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
