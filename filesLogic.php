@@ -126,28 +126,28 @@ if (isset($_GET['file_id'])) {
         //header('Pragma: public');
         //header('Content-Length: ' . filesize('file_uploads/' . $file['file_name']));
         //readfile('file_uploads/' . $file['file_name']);
-       $dir="file_uploads";
-   $f = $file['file_name'];
+        $dir="file_uploads";
+        $f = $file['file_name'];
         //$localFilePath  = $file['file_name'];
         $ftpcon = ftp_connect($ftp_hostname);
         //$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
         if ($ftpLogin = ftp_login($ftpcon, $ftp_username, $ftp_password)) {
            ftp_pasv($ftpcon, true);
-           if(ftp_chdir($ftpcon, $dir))
-    {
-        $th = fopen('php://temp', 'r+');
-        if(ftp_fget($ftpcon, $th, $remoteFilePath, FTP_ASCII))
-        {
-            rewind($th);
-            $data = stream_get_contents($th);
-        }
-    }
-}
-header("Content-Disposition: attachment; filename=" . basename($f));
-echo $data;
+           if(ftp_chdir($ftpcon, $dir)) {
+              $th = fopen('php://temp', 'r+');
+              if(ftp_fget($ftpcon, $th, $remoteFilePath, FTP_ASCII)) {
+                 rewind($th);
+                 $data = stream_get_contents($th);
+              }
+           }
+         }
+   
+        header("Content-Disposition: attachment; filename=" . basename($f));
+        echo $data;
+   
         //$remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
-        $tempFile = tempnam("/tmp", "FOO");
+        //$tempFile = tempnam("/tmp", "FOO");
         
         // try to download a file from server
         //if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_ASCII)){
