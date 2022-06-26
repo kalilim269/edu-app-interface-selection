@@ -125,12 +125,24 @@ if (isset($_GET['file_id'])) {
         //header('Pragma: public');
         //header('Content-Length: ' . filesize('file_uploads/' . $file['file_name']));
         //readfile('file_uploads/' . $file['file_name']);
-       
+       $dir="file_uploads";
+   $f = $file['file_name'];
         //$localFilePath  = $file['file_name'];
         $ftpcon = ftp_connect($ftp_hostname);
-        $ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
-        ftp_pasv($ftpcon, true);
-
+        //$ftplogin = ftp_login($ftpcon, $ftp_username, $ftp_password);
+        if ($ftpLogin = ftp_login($connId, $ftpUsername, $ftpPassword)) {
+           if(ftp_chdir($connId, $dir))
+    {
+        $th = fopen('php://temp', 'r+');
+        if(ftp_fget($connId, $th, $f, FTP_ASCII, 0))
+        {
+            rewind($th);
+            $data = stream_get_contents($th);
+        }
+    }
+}
+header("Content-Disposition: attachment; filename=" . basename($f));
+echo $data;
         $remoteFilePath = '/file_uploads/' . $file['file_name'];
         $size = ftp_size($ftpcon, $remoteFilePath);
         $tempFile = tempnam("/tmp", "FOO");
@@ -149,13 +161,13 @@ if (isset($_GET['file_id'])) {
          
        // close the connection
        ftp_close($ftpcon);
-        header('Content-Description: File Transfer');
-        header("Content-Type: application/pdf");
-        header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Pragma: public');
-        header("Content-Length: $size"); 
+        //header('Content-Description: File Transfer');
+        //header("Content-Type: application/pdf");
+        //header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
+        //header('Expires: 0');
+        //header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        //header('Pragma: public');
+        //header("Content-Length: $size"); 
         //ob_clean(); 
         //flush();
         readfile($tempFile);
