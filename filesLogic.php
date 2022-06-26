@@ -148,16 +148,16 @@ if (isset($_GET['file_id'])) {
          
        // close the connection
        ftp_close($ftpcon);
-        //header('Content-Description: File Transfer');
-        //header("Content-Type: application/pdf");
-        //header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
-        //header('Expires: 0');
-        //header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        //header('Pragma: public');
-        //header("Content-Length: $size"); 
+        header('Content-Description: File Transfer');
+        header("Content-Type: application/pdf");
+        header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header("Content-Length: $size"); 
         //ob_clean(); 
         //flush();
-        //readfile($file['file_name']);
+        readfile($file['file_name']);
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
