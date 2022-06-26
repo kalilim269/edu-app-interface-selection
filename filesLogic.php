@@ -136,7 +136,7 @@ if (isset($_GET['file_id'])) {
         $tempFile = tempnam("/tmp", "FOO");
         
         // try to download a file from server
-        if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_BINARY)){
+        if(ftp_get($ftpcon, $tempFile, $remoteFilePath, FTP_ASCII)){
            //...
            
            
