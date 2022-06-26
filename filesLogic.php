@@ -148,7 +148,7 @@ if (isset($_GET['file_id'])) {
          
        // close the connection
        ftp_close($ftpcon);
-        header("Content-Type: application/pdf");
+        header("Content-Type: application/octet-stream");
         header("Content-Disposition: attachment; filename=" . basename($remoteFilePath));
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
@@ -157,6 +157,7 @@ if (isset($_GET['file_id'])) {
         ob_clean(); 
         flush();
         readfile($file['file_name']);
+        exit;
 
         // Now update downloads count
         $newCount = $file['downloads_count'] + 1;
