@@ -134,7 +134,7 @@ if (isset($_GET['file_id'])) {
            if(ftp_chdir($ftpcon, $dir))
     {
         $th = fopen('php://temp', 'r+');
-        if(ftp_fget($ftpcon, $th, $f, FTP_ASCII, 0))
+        if(ftp_fget($ftpcon, $th, $remoteFilePath, FTP_ASCII))
         {
             rewind($th);
             $data = stream_get_contents($th);
